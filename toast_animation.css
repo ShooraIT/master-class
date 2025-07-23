@@ -1,0 +1,34 @@
+.toast {
+	cursor: pointer;
+
+	&__wings {
+		animation: wings-flapping linear infinite .4s;
+		transform-origin: center 85%;
+		pointer-events: none;
+	}
+
+	&__eyes {
+		animation: blink linear infinite 2s;
+		transform-origin: 15px;
+	}
+
+}
+
+@keyframes wings-flapping {
+	0%,
+	100% {
+		scale: 1 1;
+	}
+	50% {
+		scale: 1 .8;
+	}
+}
+
+@keyframes blink {
+	0%,90% {
+		scale: 1 1;
+	}
+	100% {
+		scale: 1 0;
+	}
+}
