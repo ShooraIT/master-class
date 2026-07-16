@@ -3,5 +3,10 @@
 
 -   Получить навык
     -   Научиться писать код; Научиться работать с базами данных
+'code'
 
-[нажми](c:\Users\Студент\Downloads\image.jpg)
+![нажми](image.jpg)
+
+
+git config --global user.name "paul"
+git config --global  user.email "el4ika2282gmail.com"
