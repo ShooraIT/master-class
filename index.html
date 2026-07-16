@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планировщик задач</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>📋 Планировщик задач</h1>
+
+        <div class="task-input">
+            <input type="text" id="taskInput" placeholder="Что нужно сделать?" onkeypress="if(event.key==='Enter') addTask()">
+            <select id="prioritySelect">
+                <option value="low">🟣 Низкий</option>
+                <option value="medium" selected>🟡 Средний</option>
+                <option value="high">🔴 Высокий</option>
+            </select>
+            <button onclick="addTask()">Добавить</button>
+        </div>
+
+        <div id="taskList">
+            <div class="task task-priority-high" onclick="toggleTask(1)">
+                <span class="task-text">Сдать проект по работе</span>
+                <button class="task-delete" onclick="event.stopPropagation(); deleteTask(1)">✕</button>
+            </div>
+            <div class="task task-priority-medium" onclick="toggleTask(2)">
+                <span class="task-text">Купить продукты</span>
+                <button class="task-delete" onclick="event.stopPropagation(); deleteTask(2)">✕</button>
+            </div>
+            <div class="task task-priority-low done" onclick="toggleTask(3)">
+                <span class="task-text">Прочитать статью</span>
+                <button class="task-delete" onclick="event.stopPropagation(); deleteTask(3)">✕</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <span>Всего: <strong id="totalTasks">0</strong></span>
+            <span>Выполнено: <strong id="doneTasks">0</strong></span>
+            <span>Осталось: <strong id="pendingTasks">0</strong></span>
+        </div>
+
+        <div class="footer">✅ Клик по задаче — отметить выполненной · 2026</div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+<script src="./script.js"></script>
+
+</body>
+</html>
